@@ -19,5 +19,5 @@ jobs:
 
     - name: Run a multi-line script
       run: .\install.ps1
-    - shell: pwsh
+      shell: pwsh
  
