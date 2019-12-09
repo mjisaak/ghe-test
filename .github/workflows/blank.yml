@@ -1,4 +1,4 @@
-name: CI
+name: Change Title on issue
 
 on:
   issues:
@@ -13,6 +13,6 @@ jobs:
     - uses: actions/checkout@v1
     - name: Run a multi-line script
       run: |
-        echo ${{ github.event.issue.title }}
+      ${{ github.event.issue.title }} -replace '*.to'
       shell: pwsh
 
