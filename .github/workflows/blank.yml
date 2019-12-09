@@ -11,8 +11,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-      
-    - name: Run a multi-line script
-      run: "'${{ github.event.issue.title }}' -replace '.*to: '"
-      shell: pwsh
 
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Run a multi-line script
+      run: |
+        $newTitle = "'${{ github.event.issue.title }}' -replace '.*to: '"
+        az webapp config appsettings set -g github-action-rg -n github-action-demo --settings title=$newTitle
+      shell: pwsh
