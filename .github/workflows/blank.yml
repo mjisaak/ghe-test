@@ -11,8 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+      
     - name: Run a multi-line script
-      run: |
-      ${{ github.event.issue.title }} -replace '*.to'
+      run: "${{ github.event.issue.title }} -replace '.*to: '"
       shell: pwsh
 
