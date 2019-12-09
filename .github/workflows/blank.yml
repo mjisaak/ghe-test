@@ -18,6 +18,6 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Run a multi-line script
-      run: .\install.ps1 -title ${{ github.event.issue.title }}
+      run: .\install.ps1 -title "${{ github.event.issue.title }}"
       shell: pwsh
  
