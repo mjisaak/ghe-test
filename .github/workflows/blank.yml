@@ -11,6 +11,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Run a multi-line script
       run: |
-        ${{ github.event }} | fl * -force
+        echo ${{ GITHUB_EVENT_PATH }}
+        echo ${{ GITHUB_EVENT_NAME }}
       shell: pwsh
 
