@@ -13,8 +13,6 @@ jobs:
     - uses: actions/checkout@v1
     - name: Run a multi-line script
       run: |
-        echo ${{ GITHUB_EVENT_PATH }}
-        echo ${{ GITHUB_EVENT_NAME }}
         echo ${{ github.event.issue.title }}
       shell: pwsh
 
