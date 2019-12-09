@@ -1,6 +1,8 @@
 name: CI
 
-on: [push]
+on:
+  issues:
+    types: [opened, edited, milestoned]
 
 jobs:
   build:
@@ -13,5 +15,6 @@ jobs:
       run: |
         echo ${{ GITHUB_EVENT_PATH }}
         echo ${{ GITHUB_EVENT_NAME }}
+        echo ${{ github.event.issue.title }}
       shell: pwsh
 
