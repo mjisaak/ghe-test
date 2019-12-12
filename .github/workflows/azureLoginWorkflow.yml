@@ -1,10 +1,9 @@
+name: Azure Login sample workflow
+
 on: [push]
 
-name: AzureLoginSample
-
 jobs:
-
-  build-and-deploy:
+  test-azure-login:
     runs-on: ubuntu-latest
     steps:
     
